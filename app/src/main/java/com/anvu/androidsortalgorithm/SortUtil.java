@@ -10,6 +10,9 @@ public class SortUtil {
     /**
      * Bubble sort
      *
+     * Best case O(n)
+     * Worst cae O(n^2)
+     *
      * @param input
      * @return
      */
@@ -30,9 +33,10 @@ public class SortUtil {
                 return input;
             }
         }
-
         return input;
     }
+
+
 
 
 }
