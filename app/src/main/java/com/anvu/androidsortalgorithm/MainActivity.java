@@ -29,8 +29,12 @@ public class MainActivity extends AppCompatActivity {
         btnSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtSorted.setText(Arrays.toString(SortUtil.bubbleSort(input)));
-                System.out.println(Arrays.toString(SortUtil.bubbleSort(input)));
+                String result;
+                // Bubble sort
+                result = Arrays.toString(SortUtil.bubbleSort(input));
+
+                txtSorted.setText(result);
+                System.out.println(result);
             }
         });
     }
