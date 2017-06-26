@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnSort;
@@ -22,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
         txtSorted = (TextView) findViewById(R.id.txt_sorted);
         txtUnsorted = (TextView) findViewById(R.id.txt_unsorted);
 
+        txtUnsorted.setText(Arrays.toString(input));
+
         btnSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(SortUtil.bubbleSort(input));
+                txtSorted.setText(Arrays.toString(SortUtil.bubbleSort(input)));
+                System.out.println(Arrays.toString(SortUtil.bubbleSort(input)));
             }
         });
     }
