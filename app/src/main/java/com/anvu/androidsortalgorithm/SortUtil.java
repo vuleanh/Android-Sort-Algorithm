@@ -9,7 +9,7 @@ public class SortUtil {
 
     /**
      * Bubble sort
-     *
+     * <p>
      * Best case O(n)
      * Worst cae O(n^2)
      *
@@ -36,7 +36,31 @@ public class SortUtil {
         return input;
     }
 
+    /**
+     * Selection sort
+     *
+     * @param input
+     * @return
+     */
+    public static int[] selectionSort(int[] input) {
+        int temp;
+        int min;
+        for (int i = 0; i < input.length - 1; i++) {
+            min = i;
+            for (int j = i + 1; j < input.length; j++) {
+                if (input[j] < input[min]) {
+                    min = j;
+                }
+            }
 
+            if (min != i) {
+                temp = input[min];
+                input[min] = input[i];
+                input[i] = temp;
+            }
+        }
+        return input;
+    }
 
 
 }

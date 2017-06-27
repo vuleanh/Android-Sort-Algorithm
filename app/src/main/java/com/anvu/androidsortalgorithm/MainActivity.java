@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        input = new int[]{2, 6, 8, 1, 3, 2, 9};
+        input = new int[]{2, 6, 8, 1, 3, 2, 9, 5, 10, 34, 1, 0};
         btnSort = (Button) findViewById(R.id.btn_sort);
         txtSorted = (TextView) findViewById(R.id.txt_sorted);
         txtUnsorted = (TextView) findViewById(R.id.txt_unsorted);
@@ -29,9 +29,13 @@ public class MainActivity extends AppCompatActivity {
         btnSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                input = new int[]{2, 6, 8, 1, 3, 2, 9, 5, 10, 34, 1, 0};
                 String result;
                 // Bubble sort
-                result = Arrays.toString(SortUtil.bubbleSort(input));
+                // result = Arrays.toString(SortUtil.bubbleSort(input));
+
+                // Selection sort
+                result = Arrays.toString(SortUtil.selectionSort(input));
 
                 txtSorted.setText(result);
                 System.out.println(result);
