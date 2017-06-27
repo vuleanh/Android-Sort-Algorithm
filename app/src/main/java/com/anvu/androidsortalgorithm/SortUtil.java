@@ -38,7 +38,7 @@ public class SortUtil {
 
     /**
      * Selection
-     *
+     * <p>
      * Best case: O(n^2)
      * Worst case: O(n^2)
      *
@@ -61,6 +61,29 @@ public class SortUtil {
                 input[min] = input[i];
                 input[i] = temp;
             }
+        }
+        return input;
+    }
+
+    /**
+     * Insertion sort
+     *
+     * @param input
+     * @return
+     */
+    public static int[] insertionSort(int[] input) {
+        int valueToInsert;
+        int holePosition;
+        for (int i = 1; i < input.length; i++) {
+            holePosition = i;
+            valueToInsert = input[i];
+
+            while (holePosition > 0 && input[holePosition - 1] > valueToInsert) {
+                input[holePosition] = input[holePosition - 1];
+                holePosition = holePosition - 1;
+            }
+
+            input[holePosition] = valueToInsert;
         }
         return input;
     }
