@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         btnSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                input = new int[]{2, 6, 8, 1, 3, 2, 9, 5, 10, 34, 1, 0};
                 String result;
                 // Bubble sort
                 // result = Arrays.toString(SortUtil.bubbleSort(input));
