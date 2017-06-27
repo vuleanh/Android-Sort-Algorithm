@@ -37,7 +37,10 @@ public class SortUtil {
     }
 
     /**
-     * Selection sort
+     * Selection
+     *
+     * Best case: O(n^2)
+     * Worst case: O(n^2)
      *
      * @param input
      * @return
