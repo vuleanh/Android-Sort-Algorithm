@@ -1,5 +1,9 @@
 package com.anvu.androidsortalgorithm;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by vuanh on 6/15/17.
  */
@@ -67,6 +71,9 @@ public class SortUtil {
 
     /**
      * Insertion sort
+     * <p>
+     * Best case: O(n)
+     * Worst case: O(n^2)
      *
      * @param input
      * @return
@@ -74,6 +81,7 @@ public class SortUtil {
     public static int[] insertionSort(int[] input) {
         int valueToInsert;
         int holePosition;
+
         for (int i = 1; i < input.length; i++) {
             holePosition = i;
             valueToInsert = input[i];
@@ -89,4 +97,52 @@ public class SortUtil {
     }
 
 
+    /**
+     * Merge Sort
+     *
+     * @param input
+     * @return
+     */
+    public static List<Integer> mergeSort(List<Integer> input) {
+
+        if (input.size() <= 1) return input;
+
+        System.out.println(input.size());
+
+        List<Integer> list1 = input.subList(0, input.size() / 2);
+        List<Integer> list2 = input.subList(input.size() / 2 + 1, input.size() - 1);
+
+
+        list1 = mergeSort(list1);
+        list2 = mergeSort(list2);
+
+        return merge(list1, list2);
+
+    }
+
+
+    public static List<Integer> merge(List<Integer> array1, List<Integer> array2) {
+
+        List<Integer> result = new ArrayList<>();
+
+        while (array1.size() > 0 && array2.size() > 0) {
+            if (array1.get(0) > array2.get(0)) {
+                result.add(array2.get(0));
+                array2.remove(0);
+            } else {
+                result.add(array1.get(0));
+                array1.remove(0);
+            }
+        }
+
+        while (array1.size() > 0) {
+            result.addAll(array1);
+        }
+
+        while (array2.size() > 0) {
+            result.addAll(array2);
+        }
+
+        return result;
+    }
 }

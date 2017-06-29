@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +40,24 @@ public class MainActivity extends AppCompatActivity {
                 // result = Arrays.toString(SortUtil.selectionSort(input));
 
                 // Insertion sort
-                   result = Arrays.toString(SortUtil.insertionSort(input));
+                // result = Arrays.toString(SortUtil.insertionSort(input));
+
+                // Merge sort
+
+                List<Integer> list = new ArrayList<Integer>();
+
+                for(int i : input){
+                    list.add(i);
+                }
+
+                list = SortUtil.mergeSort(list);
+
+                int[] array =new int[list.size()];
+
+                for(int i = 0; i < list.size(); i++) array[i] = list.get(i);
+
+                result = Arrays.toString(array);
+
 
                 txtSorted.setText(result);
                 System.out.println(result);
